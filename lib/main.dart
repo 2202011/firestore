@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firestore/view/form_task.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -60,7 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print('hola');
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const AddNewTaskScreen()),
+          );
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
